@@ -1,0 +1,68 @@
+body{
+  }
+  ::selection{
+    color: rgb(0, 0, 0);
+    background: #ffffff;
+  }
+  .wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 22px 5px rgba(0,0,0,0.26)
+    ;
+    resize: both;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    min-width: 227px;
+    min-height: 37px;
+  }
+  .wrapper header{
+    font-family: sans-serif;
+    font-weight: 5px;
+    padding-left: 5px;
+    font-size: 15px;
+    font-weight: 1;
+
+  }
+  .wrapper header.active{
+    user-select: none;
+  }
+  .wrapper .content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+.close {
+    float: right;
+    height: 30px;
+    border: none;
+    background-color: #fff;
+    width: 45px;
+    background-image: url(X_80.contrast-white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+    transition: background-color .1s;
+}
+
+.close:hover {
+    background-color: red;
+    background-image: url(X_80.contrast-black.png);
+}
+
+.app-title {
+    border: 0;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.right-buttons {
+    float: right;
+}

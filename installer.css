@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html, body {
+    height: 100%;
+} 
+body {
+    overflow: hidden;
+    background-color: rgb(0, 102, 255);
+}
+
+
+.animation {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20rem;
+    height: 10rem;
+    display: block;
+    margin-top: 25rem;
+}
+
+.indicator {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.animation-gif {
+    background-image: url(https://media.tenor.com/V0vzeHv6LbwAAAAj/windows-loandig-cargando.gif);
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    background-position: center;
+    height: 5rem;
+    width: 100%;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Coding By Codequs - youtube.com/codequs -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draggable Div Element in JavaScipt | Codequs</title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="window.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <header><button class="app-title">App Name</button> 
+        <button class="close"></button>
+    </header>
+    <div class="content">
+      
+    </div>
+  </div>
+
+  <script>
+    const wrapper = document.querySelector(".wrapper"),
+    header = wrapper.querySelector("header");
+
+    function onDrag({movementX, movementY}){
+      let getStyle = window.getComputedStyle(wrapper);
+      let leftVal = parseInt(getStyle.left);
+      let topVal = parseInt(getStyle.top);
+      wrapper.style.left = `${leftVal + movementX}px`;
+      wrapper.style.top = `${topVal + movementY}px`;
+    }
+
+    header.addEventListener("mousedown", ()=>{
+      header.classList.add("active");
+      header.addEventListener("mousemove", onDrag);
+    });
+
+    document.addEventListener("mouseup", ()=>{
+      header.classList.remove("active");
+      header.removeEventListener("mousemove", onDrag);
+    });
+  </script>
+</body>
+</html>

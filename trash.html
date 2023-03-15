@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Desktop | Windows 10</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="context-menu.css" />
+    <link rel="stylesheet" href="window.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>  
+    
+    <div class="desktop">
+
+      <button class="icon" id="trash">Corbeille</button>
+      <div class="wrapper">
+        <header><button class="app-title">Corbeille</button> 
+            <button class="close"></button>
+        </header>
+        <div class="content">
+          
+        </div>
+        <div class="explorer-left-menu">
+          <button class="left-bar-primary-element">
+            <img src="https://o.remove.bg/downloads/73665453-2ccd-4a02-a894-36fbea00d903/image_2023-01-19_190228757-removebg-preview.png" alt="" class="left-bar-element">
+            Ce PC
+          </button>
+          <button class="left-bar-second-element">
+            <img src="https://o.remove.bg/downloads/c04d8b72-e2c1-4261-96c3-3d4c03e872e5/image_2023-01-19_190915804-removebg-preview.png" alt="" class="left-bar-element">
+            Bureau
+          </button>
+        </div>
+      </div>
+    
+      <script>
+        const wrapper = document.querySelector(".wrapper"),
+        header = wrapper.querySelector("header");
+    
+        function onDrag({movementX, movementY}){
+          let getStyle = window.getComputedStyle(wrapper);
+          let leftVal = parseInt(getStyle.left);
+          let topVal = parseInt(getStyle.top);
+          wrapper.style.left = `${leftVal + movementX}px`;
+          wrapper.style.top = `${topVal + movementY}px`;
+        }
+    
+        header.addEventListener("mousedown", ()=>{
+          header.classList.add("active");
+          header.addEventListener("mousemove", onDrag);
+        });
+    
+        document.addEventListener("mouseup", ()=>{
+          header.classList.remove("active");
+          header.removeEventListener("mousemove", onDrag);
+        });
+      </script>
+     <div class="taskbar">
+      
+      <div class="left-icons">
+        <button class="start-menu"></button>
+        <button class="search-bar"><img src="https://icons-for-free.com/iconfiles/png/512/search-131964784990705675.png" alt="" class="search-bar-icon"> Tapez ici pour rechercher</button>
+        <button class="tasks-views-menu"></button>
+        <button class="tb-button" id="explorer-button" style="border-bottom: solid 2px rgb(0, 81, 255);"></button>
+        <button class="tb-button" id="chrome-button"></button>
+        <button class="tb-button" id="notepad-button"></button>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
